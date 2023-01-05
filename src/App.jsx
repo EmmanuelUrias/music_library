@@ -9,9 +9,19 @@ function App(){
     let [message, setMessage] = useState('Search for Music!')
     let [data, setData] = useState([])
 
+    useEffect(() => {
+      const fetchData = async () => {
+        document.title = `${search} Music`
+        const response = await fetch('https://itunes.apple.com/search?term=Artic Monkeys')
+        const resData = await response.json()
+        console.log(resData)
+      }
+      fetchData()
+    })
+
     return (
         <div>
-            <SearchBar />
+            <SearchBar /* doesn't work :style={{'align-items': 'center'}} *//>
             {message}
             <Gallery />
         </div>

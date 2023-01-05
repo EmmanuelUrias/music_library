@@ -1,7 +1,9 @@
+import GalleryItem from "./GalleryItem"
+
 function Gallery() {
     return(
         <div>
-            <h1>hey</h1>
+            <GalleryItem />
         </div>
     )
 }

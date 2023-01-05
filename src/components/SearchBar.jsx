@@ -1,11 +1,16 @@
-import App from "../App";
+import { useState } from 'react'
 
-function SearchBar() {
-return(
-    <div>
-        <h1>yo</h1>
-    </div>
-)
+function SearchBar(props) {
+    let [searchTerm, setSearchTerm] = useState('')
+
+    return(
+     <div>
+        <form>
+            <input type='text' placeholder='Enter a search term here'></input>
+            <button type='submit'>Search</button>
+        </form>
+     </div>
+    )
 }
 
 export default SearchBar
