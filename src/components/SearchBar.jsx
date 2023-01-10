@@ -1,17 +1,18 @@
-import { SearchContext } from '../Context/SearchContext'
-import { useContext } from 'react'
+import { useState } from 'react'
 
-function SearchBar() {
-    const { term, handleSearch } = useContext(SearchContext)
+function SearchBar(props) {
+    let [searchTerm, setSearchTerm] = useState('')
 
+    return (
+        <form onSubmit={(e) => props.handleSearch(e, searchTerm)}>
 
-    return(
-     <div>
-        <form>
-            <input ref={term} type='text' placeholder='Enter a search term here'></input>
-            <input type='submit' onClick={(e) => handleSearch(e, term.current.value)}></input>
+            <input type="text" placeholder="Enter a search term here" onChange={
+                (e) => setSearchTerm(e.target.value)
+            } />
+
+            <input type="submit" />
+
         </form>
-     </div>
     )
 }
 
