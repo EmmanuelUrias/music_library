@@ -9,7 +9,6 @@ import { SearchContext, searchContext } from './Context/SearchContext'
 import AlbumView from './components/AlbumView';
 import ArtistView from './components/ArtistView';
 import { Fragment } from 'react'
-import { createResource as fetchData } from './helper'
 
 function App(){
     let [message, setMessage] = useState('Search for Music!')
