@@ -12,16 +12,9 @@ import { Fragment } from 'react'
 
 function App(){
     let [message, setMessage] = useState('Search for Music!')
-    let [data, setData] = useState(null)
+    let [data, setData] = useState([])
    //let searchInput = useRef('')
    let [search, setSearch] = useState('')
-
-   useEffect(() => {
-    if (searchTerm) {
-        setData(fetchData(searchTerm))
-    }
-   }, [searchTerm])
-
 
     const API_URL = 'https://itunes.apple.com/search?term='
 
